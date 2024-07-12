@@ -1,0 +1,342 @@
+:root {
+--clr--Tomato: hsl(4, 100%, 67%);
+--clr--Dark-Slate-Grey: hsl(234, 29%, 20%);
+--clr--Charcoal-Grey: hsl(235, 18%, 26%);
+--clr--Grey: hsl(231, 7%, 60%);
+--clr--White: hsl(0, 0%, 100%);
+
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../assets/fonts/Roboto-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url("../assets/fonts/Roboto-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+html {
+    font-size: 16px;
+    font-family: "Roboto";
+    background-color: var(--clr--Charcoal-Grey);
+}
+
+.wrapp {
+    width: 100%;
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr--Charcoal-Grey);
+    margin: auto;
+}
+
+.wrapp main {
+    width: 930px;
+    height: min-content;
+    border: 1px solid black;
+    display: flex;
+    column-gap: 30px;
+    padding: 24px 20px;
+    padding-left: 40px;
+    padding-right: 25px;
+    background-color: var(--clr--White);
+    border-radius: 30px;
+}
+
+.wrapp main .left-side {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding: 1.5em;
+    row-gap: 1em;
+}
+
+.wrapp main .left-side h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: 2.7rem;
+    margin-bottom: 0.15rem;
+    color: var(--clr--Charcoal-Grey);
+}
+
+.wrapp main .left-side ul li {
+    list-style: none;
+}
+
+
+
+.wrapp main .left-side p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.65rem;
+}
+
+.wrapp main .left-side ul li {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: .8em;
+    padding-left: 35px;
+    position: relative;
+    line-height: 1.3;
+}
+
+.wrapp main .left-side ul li::before {
+    content: "";
+    background-image: url('../assets/images/icon-list.svg');
+    background-size: contain; /* Zajistí, že se obrázek přizpůsobí velikosti kontejneru */
+    background-repeat: no-repeat; /* Zabrání opakování obrázku */
+    -display: inline-block;
+    width: 20px; /* Nastavte šířku podle potřeby */
+    height: 20px; /* Nastavte výšku podle potřeby */
+    position: absolute; /* Absolutní pozicování vzhledem k li */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertikální centrování */
+}
+
+.wrapp main .right-side {
+    width: calc(50% - 30px);
+    height: 593px;
+    background-image: url("../assets/images/illustration-sign-up-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.wrapp main form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.wrapp .wrapp__label {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+}
+
+.wrapp main form label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.wrapp main form input[name="email"] {
+    padding: 1.1em 1.4em;
+    border-radius: 8px;
+    border: 1px solid var(--clr--Grey);
+    margin-bottom: 1.5em;
+    margin-top: 0.1em;
+    width: 375px;
+    cursor: pointer;
+    outline: none;
+}
+
+.wrapp main form input[name="email"]::placeholder {
+    font-size: 1rem;
+}
+
+.wrapp main form button {
+    padding: 1.10em 1.8em;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--clr--Dark-Slate-Grey);
+    color: var(--clr--White);
+    font-size: 1em;
+    font-weight: 400;
+    width: 375px;
+    cursor: pointer;
+}
+
+.wrapp main form button:hover,
+.wrapp .thanks-card .dismiss:hover {
+    background: linear-gradient(to right,rgb(238, 78, 105), tomato);
+    box-shadow: 0px 20px 30px rgba(247, 149, 132, 0.788);
+}
+
+
+.wrapp main form .error {
+    background-color: rgb(252, 209, 200);
+    color: red;
+    border: 1px solid red !important;
+}
+
+.errorMessage {
+    color: red;
+    display: none;
+}
+
+.wrapp main .left-side .errorMessage p{
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+
+@media (max-width:1100px) {
+    .wrapp main {
+        flex-direction: column;
+        padding: 0;
+        padding-bottom: 14px;
+        width: 375px;
+        row-gap: 20px;
+        border-radius: 0px;
+        border: none;
+    }
+
+    .wrapp main .left-side {
+        order: 2;
+        width: 375px;
+        padding-top: 0em;
+    }
+
+    .wrapp main .left-side ul li::before {
+    content: "";
+    background-image: url('../assets/images/icon-list.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+}
+
+    .wrapp main .left-side ul li {
+        line-height: 1.5;
+        margin-bottom: 0.6em;
+        padding-left: 40px;
+    }
+    
+    .wrapp main .left-side h1 {
+        margin-top: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .wrapp main form {
+        margin-top: 1.15rem;
+    }
+
+    .wrapp main form input[name="email"],
+    .wrapp main form button {
+        width: calc(375px - 48px); /*width - L/R padding*/
+    }
+
+    .wrapp main .right-side {
+        order: 1;
+        background-image: url("../assets/images/illustration-sign-up-mobile.svg");
+        width: 375px;
+        height: 284px;
+        background-size: contain;
+       _margin-top: 3.4em;
+    }
+}
+
+/*** thanks card ***/
+.wrapp .thanks-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 505px;
+    background-color: var(--clr--White);
+    border-radius: 30px;
+    border: none;
+    padding: 45px 60px 64px;
+}
+
+.wrapp .thanks-card img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 42px;
+}
+
+.wrapp .thanks-card h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--clr--Dark-Slate-Grey);
+    margin-bottom: 25px;
+    line-height: 1;
+}
+
+.wrapp .thanks-card p {
+    width: 95%;
+    margin-bottom: 39px;
+    line-height: 1.5;
+}
+
+.wrapp .thanks-card strong {
+    font-weight: bold;
+}
+
+.wrapp .thanks-card button.dismiss {
+    padding: 1.10em 1.8em;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--clr--Dark-Slate-Grey);
+    color: var(--clr--White);
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.wrapp .hidden {
+    display: none;
+}
+
+.wrapp .visible {
+    display: flex;
+}
+
+@media (max-width: 1100px) {
+    .wrapp .thanks-card {
+        max-width: 375px;
+        height: 812px;
+        padding: 0;
+        border-radius: 0;
+        padding: 0 25px;
+    }
+
+    .wrapp .thanks-card img {
+        margin-top: 147px;
+    }
+
+    .wrapp .thanks-card h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 23px;
+    }
+
+    .wrapp .thanks-card p {
+        width: 100%;
+        margin-bottom: 261px;
+        line-height: 1.55;
+    }
+
+    .wrapp .thanks-card button.dissmiss {
+        _display: flex;
+        _justify-self: flex-end;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    color: antiquewhite;
+}
+.attribution a { color: hsl(228, 68%, 70%); }
